@@ -41,10 +41,10 @@ const AddBook = () => {
       const bookData = { ...book };
 
       if (book._id) {
-        await axios.put(`https://spotlet-backend-deployment.onrender.com/${book._id}`, bookData);
+        await axios.put(`https://spotlet-backend-deployment-3.onrender.com/${book._id}`, bookData);
         alert("Book updated successfully!");
       } else {
-        await axios.post("https://spotlet-backend-deployment.onrender.com/", bookData);
+        await axios.post("https://spotlet-backend-deployment-3.onrender.com/", bookData);
         alert("Book added successfully!");
       }
       navigate("/");

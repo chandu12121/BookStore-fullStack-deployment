@@ -14,7 +14,7 @@ const BooksList = ({ searchQuery }) => {
     const fetchBooks = async () => {
       setLoading(true);
       try {
-        const { data } = await axios.get(`https://spotlet-backend-deployment.onrender.com/search?query=${searchQuery}`);
+        const { data } = await axios.get(`https://spotlet-backend-deployment-3.onrender.com/search?query=${searchQuery}`);
         setBooks(data);
       } catch (error) {
         setError("Failed to load books. Please refresh the page.");
@@ -35,7 +35,7 @@ const BooksList = ({ searchQuery }) => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this book?")) {
       try {
-        await axios.delete(`https://spotlet-backend-deployment.onrender.com/${id}`);
+        await axios.delete(`https://spotlet-backend-deployment-3.onrender.com/${id}`);
         setBooks((prevBooks) => prevBooks.filter((book) => book._id !== id));
       } catch (error) {
         alert("Error deleting book. Please try again.");
